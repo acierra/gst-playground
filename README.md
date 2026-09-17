@@ -26,6 +26,8 @@ It is used by the Unity project to:
 - expose received video data to Unity.
 ## Current test architecture
 
+The current test setup uses GStreamer as the WebRTC video sender and `GstWebRtcReceiver.Core` as the C# WebRTC receiver inside Unity.
+
 ```mermaid
 flowchart LR
     GST["GStreamer<br/>webrtcsink"]
@@ -35,15 +37,11 @@ flowchart LR
         CORE["GstWebRtcReceiver.Core<br/>C# WebRTC receiver"]
     end
 
-    GST -->|"WebRTC video stream"| CORE
+    GST ==>|"WebRTC video stream"| CORE
 
-    GST -. "signalling" .-> SIG
-    CORE -. "signalling" .-> SIG
+    GST <-->|"signalling"| SIG
+    CORE <-->|"signalling"| SIG
 ```
-
-`rs-signalling` is used only to establish the WebRTC connection.
-
-The video stream itself is transferred from the GStreamer WebRTC sender to `GstWebRtcReceiver.Core`.
 
 ## Main modified directories
 
@@ -59,14 +57,3 @@ Responsibilities:
 * RTP video reception;
 * exposing received video data through C# events/callbacks.
 
-### `csharp/MinimalWebRtcClient/`
-
-Console smoke test for `GstWebRtcReceiver.Core`.
-
-It allows the receiver to be tested independently from Unity.
-
-## Relation to the Unity project
-
-The Unity project references `GstWebRtcReceiver.Core` and uses it as its WebRTC receiver.
-
-At the current stage, `gst-playground` is used as a test environment for the GStreamer/WebRTC side of the system.
