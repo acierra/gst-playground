@@ -2,20 +2,28 @@
 
 This fork contains changes to the C# WebRTC client from `gst-playground` for use inside Unity.
 
-## What was changed
+## Main changes
 
-The original C# console WebRTC client was refactored so that its WebRTC logic can be reused outside the console application.
+The original project provides a GStreamer WebRTC test environment
+with a browser-based JavaScript client.
 
-The receiver logic was moved into:
+This fork adds a C# receiving path for Unity integration.
 
-`csharp/GstWebRtcReceiver.Core/`
+### `csharp/MinimalWebRtcClient/`
 
-The original console application remains as a simple test client:
+C# console application used to test connection to the existing
+GStreamer WebRTC infrastructure without Unity.
 
-`csharp/MinimalWebRtcClient/`
+### `csharp/GstWebRtcReceiver.Core/`
 
-`GstWebRtcReceiver.Core` is then used inside the Unity project.
+Reusable C# WebRTC receiver extracted from the console prototype.
 
+It is used by the Unity project to:
+
+- connect to `rs-signalling`;
+- perform WebRTC negotiation;
+- receive the video stream;
+- expose received video data to Unity.
 ## Current test architecture
 
 ```mermaid
