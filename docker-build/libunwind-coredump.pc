@@ -1,0 +1,11 @@
+prefix=/root/.conan2/p/libunf5a5badfaf79e/p
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/bin
+
+Name: libunwind-coredump
+Description: Conan component: libunwind-coredump
+Version: 1.8.0
+Libs: -L"${libdir}" -lunwind-coredump
+Cflags: -I"${includedir}"
+Requires: libunwind-generic libunwind

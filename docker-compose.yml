@@ -1,0 +1,90 @@
+services:
+  base-build:
+    image: gst-plugins-rs:latest
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.rs
+    volumes:
+      - shared-source:/app
+
+  js-client:
+    profiles:
+      - js
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.client
+      additional_contexts:
+        gst-plugins-rs-base: service:base-build
+    depends_on:
+      - base-build
+    network_mode: "host"
+    volumes:
+      - shared-source:/app
+
+  csharp-client:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.csharp-client
+    depends_on:
+      - rs-signalling
+      - gst-producer
+    network_mode: "host"
+    restart: unless-stopped
+
+  rs-signalling:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.signal
+      additional_contexts:
+        gst-plugins-rs-base: service:base-build
+    depends_on:
+      - base-build
+    network_mode: "host"
+    volumes:
+      - shared-source:/app
+
+  gst-producer:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      additional_contexts:
+        gst-plugins-rs-base: service:base-build
+    depends_on:
+      - base-build
+      - rs-signalling
+    network_mode: "host"
+    command:
+      - bash
+      - -lc
+      - >
+        until timeout 1 bash -c '</dev/tcp/127.0.0.1/8443' 2>/dev/null;
+        do echo 'waiting for signalling server on 8443'; sleep 1; done;
+        gst-launch-1.0 -v
+        videotestsrc is-live=true pattern=18 !
+        video/x-raw,width=640,height=480,framerate=30/1 !
+        videoconvert !
+        queue !
+        webrtcsink
+        signaller::uri=ws://localhost:8443
+        congestion-control=0
+        video-caps=video/x-vp8
+        message-forward=true
+    restart: unless-stopped
+
+  gst-env:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      additional_contexts:
+        gst-plugins-rs-base: service:base-build
+    depends_on:
+      - base-build
+    network_mode: "host"
+    volumes:
+      - .:/workspace
+    security_opt:
+      - seccomp:unconfined
+    shm_size: '2gb'
+
+volumes:
+  shared-source:

@@ -1,0 +1,5 @@
+FROM gst-plugins-rs-base AS base
+
+WORKDIR /gst-plugins-rs/net/webrtc/signalling
+
+CMD ["cargo", "run", "--bin", "gst-webrtc-signalling-server"]

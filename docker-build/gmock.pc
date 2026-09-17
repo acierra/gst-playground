@@ -1,0 +1,11 @@
+prefix=/root/.conan2/p/b/gtest528f2d88fc336/p
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/bin
+
+Name: gmock
+Description: Conan component: gmock
+Version: 1.17.0
+Libs: -L"${libdir}" -lgmock
+Cflags: -I"${includedir}"
+Requires: gtest

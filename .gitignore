@@ -1,0 +1,29 @@
+# .NET
+
+**/bin/
+**/obj/
+.vs/
+*.user
+
+# Node.js
+
+**/node_modules/
+
+# Rust
+
+**/target/
+
+# IDE
+
+.idea/
+
+# Local environment
+
+.env
+*.log
+
+# OS
+
+.DS_Store
+Thumbs.db
+

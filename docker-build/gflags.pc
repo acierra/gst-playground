@@ -1,0 +1,10 @@
+prefix=/root/.conan2/p/gflaga10a3b9db4758/p
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/bin
+
+Name: gflags
+Description: Conan package: gflags
+Version: 2.2.2
+Libs: -L"${libdir}" -lgflags_nothreads -lpthread -lm
+Cflags: -I"${includedir}"

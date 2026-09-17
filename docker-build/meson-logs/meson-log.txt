@@ -1,0 +1,339 @@
+Build started at 2026-04-20T10:14:42.204240
+Main binary: /usr/bin/python3
+Build Options: --native-file=./docker-build/conan_meson_native.ini
+Python system: Linux
+The Meson build system
+Version: 1.3.2
+Source dir: /workspace
+Build dir: /workspace/docker-build
+Build type: native build
+Project name: gstPlayground
+Project version: undefined
+-----------
+Detecting compiler via: `g++ --version` -> 0
+stdout:
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-----------
+Running command: g++ -E -dM -
+-----
+-----------
+Detecting linker via: `g++ -Wl,--version -m64` -> 0
+stdout:
+GNU ld (GNU Binutils for Ubuntu) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) a later version.
+This program has absolutely no warranty.
+-----------
+stderr:
+collect2 version 13.3.0
+/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQXfXEP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. --version -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+-----------
+Sanity testing C++ compiler: g++
+Is cross compiler: False.
+Sanity check compiler command line: g++ sanitycheckcpp.cc -o sanitycheckcpp.exe -m64 -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command:  /workspace/docker-build/meson-private/sanitycheckcpp.exe
+C++ compiler for the host machine: g++ (gcc 13.3.0 "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0")
+C++ linker for the host machine: g++ ld.bfd 2.42
+-----------
+Detecting archiver via: `gcc-ar --version` -> 0
+stdout:
+GNU ar (GNU Binutils for Ubuntu) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
+-----------
+-----------
+Detecting compiler via: `g++ --version` -> 0
+stdout:
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-----------
+Running command: g++ -E -dM -
+-----
+-----------
+Detecting linker via: `g++ -Wl,--version` -> 0
+stdout:
+GNU ld (GNU Binutils for Ubuntu) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) a later version.
+This program has absolutely no warranty.
+-----------
+stderr:
+collect2 version 13.3.0
+/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccddHomx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. --version -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+-----------
+Sanity testing C++ compiler: g++
+Is cross compiler: False.
+Sanity check compiler command line: g++ sanitycheckcpp.cc -o sanitycheckcpp.exe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command:  /workspace/docker-build/meson-private/sanitycheckcpp.exe
+C++ compiler for the build machine: g++ (gcc 13.3.0 "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0")
+C++ linker for the build machine: g++ ld.bfd 2.42
+-----------
+Detecting archiver via: `gcc-ar --version` -> 0
+stdout:
+GNU ar (GNU Binutils for Ubuntu) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
+-----------
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Target machine cpu family: x86_64
+Target machine cpu: x86_64
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Found pkg-config: YES (/usr/bin/pkg-config) 1.8.1
+Determining dependency 'glib-2.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion glib-2.0` -> 0
+stdout:
+2.80.0
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags glib-2.0` -> 0
+stdout:
+-I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
+stdout:
+-lglib-2.0
+-----------
+Running compile:
+Working directory:  /workspace/docker-build/meson-private/tmp3j0hj850
+Code:
+ 
+        #include<stddef.h>
+        #include<stdio.h>
+        int main(void) {
+            printf("%ld\n", (long)(sizeof(void *)));
+            return 0;
+        }
+-----------
+Command line: `g++ /workspace/docker-build/meson-private/tmp3j0hj850/testfile.cpp -o /workspace/docker-build/meson-private/tmp3j0hj850/output.exe -m64 -D_FILE_OFFSET_BITS=64 -O0 -fpermissive` -> 0
+Program stdout:
+
+8
+
+Program stderr:
+
+
+Running compile:
+Working directory:  /workspace/docker-build/meson-private/tmpraxir8t_
+Code:
+ 
+-----------
+Command line: `g++ /workspace/docker-build/meson-private/tmpraxir8t_/testfile.cpp -o /workspace/docker-build/meson-private/tmpraxir8t_/output.obj -c -m64 -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs` -> 0
+stdout:
+install: /usr/lib/gcc/x86_64-linux-gnu/13/
+programs: =/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/13/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/13/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+-----------
+Run-time dependency glib-2.0 found: YES 2.80.0
+Determining dependency 'gstreamer-1.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gstreamer-1.0` -> 0
+stdout:
+1.24.2
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gstreamer-1.0` -> 0
+stdout:
+-I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -pthread -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gstreamer-1.0` -> 0
+stdout:
+-L/usr/lib/x86_64-linux-gnu -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gstreamer-1.0` -> 0
+stdout:
+-lgstreamer-1.0 -lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency gstreamer-1.0 found: YES 1.24.2
+Determining dependency 'libglog' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion libglog` -> 0
+stdout:
+0.7.1
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags libglog` -> 0
+stdout:
+-I/root/.conan2/p/glog7aada7e0562d3/p/include -DGLOG_USE_GLOG_EXPORT= -I/root/.conan2/p/gflaga10a3b9db4758/p/include -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs libglog` -> 0
+stdout:
+-L/root/.conan2/p/glog7aada7e0562d3/p/lib -lglog -L/root/.conan2/p/gflaga10a3b9db4758/p/lib -lgflags_nothreads -lm -L/root/.conan2/p/libunf5a5badfaf79e/p/lib -lunwind -L/root/.conan2/p/xz_utc54e905cffd61/p/lib -llzma -lpthread -L/root/.conan2/p/zlib9e81e3baaa894/p/lib -lz
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs libglog` -> 0
+stdout:
+-L/root/.conan2/p/glog7aada7e0562d3/p/lib -lglog -L/root/.conan2/p/gflaga10a3b9db4758/p/lib -lgflags_nothreads -lm -L/root/.conan2/p/libunf5a5badfaf79e/p/lib -lunwind -L/root/.conan2/p/xz_utc54e905cffd61/p/lib -llzma -lpthread -L/root/.conan2/p/zlib9e81e3baaa894/p/lib -lz
+-----------
+Running compile:
+Working directory:  /workspace/docker-build/meson-private/tmpetvay2tu
+Code:
+ int main(void) { return 0; }
+
+-----------
+Command line: `g++ /workspace/docker-build/meson-private/tmpetvay2tu/testfile.cpp -o /workspace/docker-build/meson-private/tmpetvay2tu/output.exe -m64 -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined` -> 0
+Running compile:
+Working directory:  /workspace/docker-build/meson-private/tmprgnh0_kz
+Code:
+ int main(void) { return 0; }
+
+-----------
+Command line: `g++ /workspace/docker-build/meson-private/tmprgnh0_kz/testfile.cpp -o /workspace/docker-build/meson-private/tmprgnh0_kz/output.exe -m64 -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lpthread -Wl,--end-group -Wl,--allow-shlib-undefined` -> 0
+Run-time dependency libglog found: YES 0.7.1
+Determining dependency 'gtest' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gtest` -> 0
+stdout:
+1.17.0
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gtest` -> 0
+stdout:
+-I/root/.conan2/p/b/gtest528f2d88fc336/p/include -DGTEST_LINKED_AS_SHARED_LIBRARY=1
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gtest` -> 0
+stdout:
+-L/root/.conan2/p/b/gtest528f2d88fc336/p/lib -lgtest -lm -lpthread
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gtest` -> 0
+stdout:
+-L/root/.conan2/p/b/gtest528f2d88fc336/p/lib -lgtest -lm -lpthread
+-----------
+Running compile:
+Working directory:  /workspace/docker-build/meson-private/tmpewkf1nzo
+Code:
+ int main(void) { return 0; }
+
+-----------
+Command line: `g++ /workspace/docker-build/meson-private/tmpewkf1nzo/testfile.cpp -o /workspace/docker-build/meson-private/tmpewkf1nzo/output.exe -m64 -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined` -> 0
+Running compile:
+Working directory:  /workspace/docker-build/meson-private/tmpj38ekknf
+Code:
+ int main(void) { return 0; }
+
+-----------
+Command line: `g++ /workspace/docker-build/meson-private/tmpj38ekknf/testfile.cpp -o /workspace/docker-build/meson-private/tmpj38ekknf/output.exe -m64 -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lpthread -Wl,--end-group -Wl,--allow-shlib-undefined` -> 0
+Run-time dependency GTest found: YES 1.17.0
+Determining dependency 'gtest_main' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gtest_main` -> 0
+stdout:
+1.17.0
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gtest_main` -> 0
+stdout:
+-I/root/.conan2/p/b/gtest528f2d88fc336/p/include -DGTEST_LINKED_AS_SHARED_LIBRARY=1
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gtest_main` -> 0
+stdout:
+-L/root/.conan2/p/b/gtest528f2d88fc336/p/lib -lgtest_main -lgtest -lm -lpthread
+-----------
+env[PKG_CONFIG_PATH]: /workspace/docker-build
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gtest_main` -> 0
+stdout:
+-L/root/.conan2/p/b/gtest528f2d88fc336/p/lib -lgtest_main -lgtest -lm -lpthread
+-----------
+Run-time dependency gtest_main found: YES 1.17.0
+Adding test "elements"
+Adding test "pipeline"
+Adding test "integration"
+Build targets in project: 3
+
+gstPlayground undefined
+
+  User defined options
+    Native files: ./docker-build/conan_meson_native.ini
+
+Found ninja-1.11.1 at /usr/bin/ninja
+Running compile:
+Working directory:  /tmp/tmp9_djujwl
+Code:
+ int i = static_cast<int>(0);
+-----------
+Command line: `g++ /tmp/tmp9_djujwl/testfile.cpp -o /tmp/tmp9_djujwl/output.obj -D_FILE_OFFSET_BITS=64 -c -std=c++20` -> 0
+Compiler accepts -std=c++20: YES

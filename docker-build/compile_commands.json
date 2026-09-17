@@ -1,0 +1,74 @@
+[
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Ilibgstpp.so.p -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -fPIC -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ libgstpp.so.p/src_element.cc.o -MF libgstpp.so.p/src_element.cc.o.d -o libgstpp.so.p/src_element.cc.o -c ../src/element.cc",
+    "file": "../src/element.cc",
+    "output": "libgstpp.so.p/src_element.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Ilibgstpp.so.p -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -fPIC -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ libgstpp.so.p/src_basePlayer.cc.o -MF libgstpp.so.p/src_basePlayer.cc.o.d -o libgstpp.so.p/src_basePlayer.cc.o -c ../src/basePlayer.cc",
+    "file": "../src/basePlayer.cc",
+    "output": "libgstpp.so.p/src_basePlayer.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Ilibgstpp.so.p -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -fPIC -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ libgstpp.so.p/src_webPlayer.cc.o -MF libgstpp.so.p/src_webPlayer.cc.o.d -o libgstpp.so.p/src_webPlayer.cc.o -c ../src/webPlayer.cc",
+    "file": "../src/webPlayer.cc",
+    "output": "libgstpp.so.p/src_webPlayer.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Ilibgstpp.so.p -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -fPIC -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ libgstpp.so.p/src_pipeline.cc.o -MF libgstpp.so.p/src_pipeline.cc.o.d -o libgstpp.so.p/src_pipeline.cc.o -c ../src/pipeline.cc",
+    "file": "../src/pipeline.cc",
+    "output": "libgstpp.so.p/src_pipeline.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Ilibgstpp.so.p -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -fPIC -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ libgstpp.so.p/src_baseRtcPlayer.cc.o -MF libgstpp.so.p/src_baseRtcPlayer.cc.o.d -o libgstpp.so.p/src_baseRtcPlayer.cc.o -c ../src/baseRtcPlayer.cc",
+    "file": "../src/baseRtcPlayer.cc",
+    "output": "libgstpp.so.p/src_baseRtcPlayer.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -IgstPlayground.p -I. -I.. -I../src -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ gstPlayground.p/src_playerFactory.cc.o -MF gstPlayground.p/src_playerFactory.cc.o.d -o gstPlayground.p/src_playerFactory.cc.o -c ../src/playerFactory.cc",
+    "file": "../src/playerFactory.cc",
+    "output": "gstPlayground.p/src_playerFactory.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -IgstPlayground.p -I. -I.. -I../src -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ gstPlayground.p/src_flags.cc.o -MF gstPlayground.p/src_flags.cc.o.d -o gstPlayground.p/src_flags.cc.o -c ../src/flags.cc",
+    "file": "../src/flags.cc",
+    "output": "gstPlayground.p/src_flags.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -IgstPlayground.p -I. -I.. -I../src -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -DGLOG_USE_GLOG_EXPORT= -pthread -MD -MQ gstPlayground.p/src_main.cc.o -MF gstPlayground.p/src_main.cc.o.d -o gstPlayground.p/src_main.cc.o -c ../src/main.cc",
+    "file": "../src/main.cc",
+    "output": "gstPlayground.p/src_main.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Itests/element_test_exe.p -Itests -I../tests -I../src -I/root/.conan2/p/b/gtest528f2d88fc336/p/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -DGLOG_USE_GLOG_EXPORT= -pthread -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -MD -MQ tests/element_test_exe.p/element_test.cc.o -MF tests/element_test_exe.p/element_test.cc.o.d -o tests/element_test_exe.p/element_test.cc.o -c ../tests/element_test.cc",
+    "file": "../tests/element_test.cc",
+    "output": "tests/element_test_exe.p/element_test.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Itests/element_test_exe.p -Itests -I../tests -I../src -I/root/.conan2/p/b/gtest528f2d88fc336/p/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -DGLOG_USE_GLOG_EXPORT= -pthread -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -MD -MQ tests/element_test_exe.p/integration_test.cc.o -MF tests/element_test_exe.p/integration_test.cc.o.d -o tests/element_test_exe.p/integration_test.cc.o -c ../tests/integration_test.cc",
+    "file": "../tests/integration_test.cc",
+    "output": "tests/element_test_exe.p/integration_test.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Itests/element_test_exe.p -Itests -I../tests -I../src -I/root/.conan2/p/b/gtest528f2d88fc336/p/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -DGLOG_USE_GLOG_EXPORT= -pthread -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -MD -MQ tests/element_test_exe.p/pipeline_test.cc.o -MF tests/element_test_exe.p/pipeline_test.cc.o.d -o tests/element_test_exe.p/pipeline_test.cc.o -c ../tests/pipeline_test.cc",
+    "file": "../tests/pipeline_test.cc",
+    "output": "tests/element_test_exe.p/pipeline_test.cc.o"
+  },
+  {
+    "directory": "/workspace/docker-build",
+    "command": "g++ -Itests/element_test_exe.p -Itests -I../tests -I../src -I/root/.conan2/p/b/gtest528f2d88fc336/p/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/gstreamer-1.0 -I/root/.conan2/p/libunf5a5badfaf79e/p/include -I/root/.conan2/p/xz_utc54e905cffd61/p/include -I/root/.conan2/p/zlib9e81e3baaa894/p/include -I/root/.conan2/p/glog7aada7e0562d3/p/include -I/root/.conan2/p/gflaga10a3b9db4758/p/include -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O3 -m64 -DGLOG_USE_GLOG_EXPORT= -pthread -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -MD -MQ tests/element_test_exe.p/logger.cc.o -MF tests/element_test_exe.p/logger.cc.o.d -o tests/element_test_exe.p/logger.cc.o -c ../tests/logger.cc",
+    "file": "../tests/logger.cc",
+    "output": "tests/element_test_exe.p/logger.cc.o"
+  }
+]

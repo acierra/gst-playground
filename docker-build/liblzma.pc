@@ -1,0 +1,10 @@
+prefix=/root/.conan2/p/xz_utc54e905cffd61/p
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/bin
+
+Name: liblzma
+Description: Conan package: liblzma
+Version: 5.8.3
+Libs: -L"${libdir}" -llzma -lpthread
+Cflags: -I"${includedir}"

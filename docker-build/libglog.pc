@@ -1,0 +1,11 @@
+prefix=/root/.conan2/p/glog7aada7e0562d3/p
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/bin
+
+Name: libglog
+Description: Conan package: libglog
+Version: 0.7.1
+Libs: -L"${libdir}" -lglog -lpthread
+Cflags: -I"${includedir}" -DGLOG_USE_GLOG_EXPORT=
+Requires: gflags libunwind

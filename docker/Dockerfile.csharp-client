@@ -1,0 +1,12 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+WORKDIR /workspace
+
+COPY csharp/MinimalWebRtcClient/MinimalWebRtcClient.csproj csharp/MinimalWebRtcClient/
+RUN dotnet restore csharp/MinimalWebRtcClient/MinimalWebRtcClient.csproj
+
+COPY csharp/MinimalWebRtcClient/ csharp/MinimalWebRtcClient/
+RUN dotnet build csharp/MinimalWebRtcClient/MinimalWebRtcClient.csproj --no-restore
+
+ENTRYPOINT ["dotnet", "run", "--no-build", "--project", "csharp/MinimalWebRtcClient/MinimalWebRtcClient.csproj", "--"]
+CMD ["--signalling", "ws://localhost:8443", "--timeout", "60", "--observe", "15", "--repeat"]

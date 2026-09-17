@@ -1,0 +1,10 @@
+prefix=/root/.conan2/p/b/gtest528f2d88fc336/p
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/bin
+
+Name: gtest
+Description: Conan component: gtest
+Version: 1.17.0
+Libs: -L"${libdir}" -lgtest -lm -lpthread
+Cflags: -I"${includedir}" -DGTEST_LINKED_AS_SHARED_LIBRARY=1
