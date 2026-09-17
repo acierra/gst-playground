@@ -1,47 +1,64 @@
-# gst-playground — Unity integration fork
+# gst-playground — Unity WebRTC receiver fork
 
-This fork contains changes to the C# WebRTC receiver used for Unity integration (`GstWebRtcReceiver.Core`).
+This fork contains changes to the C# WebRTC client from `gst-playground` for use inside Unity.
 
-The original `gst-playground` project is used as a test environment for the GStreamer/WebRTC connection.
-The C# receiver was separated from the console application so that the same WebRTC logic can be reused inside the Unity project.
+## What was changed
 
-## Main changes
+The original C# console WebRTC client was refactored so that its WebRTC logic can be reused outside the console application.
 
-### `csharp/GstWebRtcReceiver.Core/`
+The receiver logic was moved into:
 
-Reusable C# WebRTC receiver extracted from the original console client.
+`csharp/GstWebRtcReceiver.Core/`
 
-It contains the main WebRTC logic:
+The original console application remains as a simple test client:
 
-* connection to `rs-signalling`;
-* SDP and ICE exchange;
-* DTLS/SRTP connection handling;
-* RTP video reception;
-* delivery of received video data to the application using C# events/callbacks.
+`csharp/MinimalWebRtcClient/`
 
-This library is used by the Unity project.
+`GstWebRtcReceiver.Core` is then used inside the Unity project.
 
-### `csharp/MinimalWebRtcClient/`
-
-The console client is kept as a simple smoke test for `GstWebRtcReceiver.Core`.
-
-It allows the WebRTC receiver to be tested independently from Unity.
-
-## Current test setup
+## Current test architecture
 
 ```mermaid
 flowchart LR
-    GST["GStreamer / webrtcsink"]
+    GST["GStreamer<br/>webrtcsink"]
     SIG["rs-signalling"]
-    CORE["GstWebRtcReceiver.Core"]
-    UNITY["Unity"]
 
-    GST -. "SDP / ICE" .-> SIG
-    CORE -. "SDP / ICE" .-> SIG
+    subgraph UNITY["Unity application"]
+        CORE["GstWebRtcReceiver.Core<br/>C# WebRTC receiver"]
+    end
 
-    GST -->|"WebRTC / RTP"| CORE
-    CORE --> UNITY
+    GST -->|"WebRTC video stream"| CORE
+
+    GST -. "signalling" .-> SIG
+    CORE -. "signalling" .-> SIG
 ```
 
-The GStreamer test source currently replaces the future real video source.
-The Unity-side implementation is maintained in the `Unity_bridge` repository.
+`rs-signalling` is used only to establish the WebRTC connection.
+
+The video stream itself is transferred from the GStreamer WebRTC sender to `GstWebRtcReceiver.Core`.
+
+## Main modified directories
+
+### `csharp/GstWebRtcReceiver.Core/`
+
+Reusable C# WebRTC receiver.
+
+Responsibilities:
+
+* connection to `rs-signalling`;
+* SDP and ICE handling;
+* WebRTC connection setup;
+* RTP video reception;
+* exposing received video data through C# events/callbacks.
+
+### `csharp/MinimalWebRtcClient/`
+
+Console smoke test for `GstWebRtcReceiver.Core`.
+
+It allows the receiver to be tested independently from Unity.
+
+## Relation to the Unity project
+
+The Unity project references `GstWebRtcReceiver.Core` and uses it as its WebRTC receiver.
+
+At the current stage, `gst-playground` is used as a test environment for the GStreamer/WebRTC side of the system.
