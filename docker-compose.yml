@@ -67,7 +67,7 @@ services:
         webrtcsink
         signaller::uri=ws://localhost:8443
         congestion-control=0
-        video-caps=video/x-vp8
+        video-caps="video/x-h264,profile=constrained-baseline"
         message-forward=true
     restart: unless-stopped
 

@@ -42,6 +42,7 @@ public sealed class GstWebRtcReceiver : IDisposable
     public event Action<DtlsStateChangedEvent>? OnDtlsStateChanged;
     public event Action<RemoteTrackNegotiatedEvent>? OnRemoteTrackNegotiated;
     public event Action<RtpPacketReceivedEvent>? OnRtpPacket;
+    public event Action<EncodedVideoFrameReceivedEvent>? OnEncodedVideoFrame;
     public event Action<SessionEndedEvent>? OnSessionEnded;
     public event Action<Exception>? OnError;
 
@@ -308,8 +309,8 @@ public sealed class GstWebRtcReceiver : IDisposable
         _peerConnection.addTrack(new MediaStreamTrack(
             new List<VideoFormat>
             {
-                new(VideoCodecsEnum.VP8, 96, 90000, null),
-                new(VideoCodecsEnum.H264, 97, 90000, "packetization-mode=1;profile-level-id=42c015;level-asymmetry-allowed=1")
+                new(VideoCodecsEnum.H264, 96, 90000, "packetization-mode=1;profile-level-id=42c015;level-asymmetry-allowed=1"),
+                new(VideoCodecsEnum.VP8, 97, 90000, null)
             },
             MediaStreamStatusEnum.RecvOnly));
 
@@ -365,11 +366,19 @@ public sealed class GstWebRtcReceiver : IDisposable
         _peerConnection.OnVideoFormatsNegotiated += formats =>
             Log("track.video", "Negotiated remote video formats: " + string.Join(", ", formats.Select(format => format.Codec)));
 
-        if (_config.VerboseFrames)
+        _peerConnection.OnVideoFrameReceived += (remote, timestamp, frame, format) =>
         {
-            _peerConnection.OnVideoFrameReceived += (remote, timestamp, frame, format) =>
+            if (_config.VerboseFrames)
+            {
                 Log("video.frame", $"{frame.Length} bytes from {remote}, ts={timestamp}, codec={format.Codec}.");
-        }
+            }
+
+            OnEncodedVideoFrame?.Invoke(new EncodedVideoFrameReceivedEvent(
+                remote?.ToString(),
+                timestamp,
+                frame,
+                format.Codec.ToString()));
+        };
 
         _peerConnection.OnRtpPacketReceived += (remote, media, packet) =>
         {
@@ -393,7 +402,7 @@ public sealed class GstWebRtcReceiver : IDisposable
         };
 
         Log("pc.create", "Created RTCPeerConnection.");
-        Log("track.local", "Added recv-only video capabilities: VP8, H264.");
+        Log("track.local", "Added recv-only video capabilities: H264 constrained baseline (preferred), VP8 (fallback).");
     }
 
     private async Task HandleRemoteSdpAsync(JsonElement sdp, CancellationToken cancellationToken)
@@ -568,6 +577,12 @@ public sealed record RtpPacketReceivedEvent(
     SDPMediaTypesEnum MediaType,
     RTPPacket Packet,
     int PacketCount);
+
+public sealed record EncodedVideoFrameReceivedEvent(
+    string? RemoteEndpoint,
+    uint Timestamp,
+    byte[] Frame,
+    string Codec);
 
 public sealed record SessionEndedEvent(
     string? SessionId,
